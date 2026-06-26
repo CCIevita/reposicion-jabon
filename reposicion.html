@@ -27,15 +27,6 @@
             margin-bottom: 15px;
         }
 
-        h2 {
-            margin-bottom: 5px;
-        }
-
-        .subtitulo {
-            color: #555;
-            margin-bottom: 20px;
-        }
-
         select {
             width: 100%;
             padding: 12px;
@@ -55,8 +46,11 @@
             width: 100%;
         }
 
-        button:hover {
-            background-color: #16304a;
+        .mensaje {
+            display: none;
+            color: green;
+            font-weight: bold;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -65,15 +59,12 @@
 
 <div class="card">
 
-    <!-- LOGO -->
     <img src="logo.png" class="logo">
 
     <h2>Reposición de Jabón</h2>
-    <p class="subtitulo">H.I.G.A. Evita - Lanús</p>
+    <p>H.I.G.A. Evita - Lanús</p>
 
-    <form action="https://formsubmit.co/comite.infecciones.evitalanus@gmail.com" method="POST">
-
-        <label><strong>Seleccione el sector:</strong></label>
+    <form id="formulario" action="https://formsubmit.co/comite.infecciones.evitalanus@gmail.com" method="POST">
 
         <select name="Sector" required>
             <option value="">-- Seleccionar --</option>
@@ -94,13 +85,38 @@
         <input type="hidden" name="_subject" value="Reposición de jabón líquido">
         <input type="hidden" name="_captcha" value="false">
 
-        <button type="submit">
-            Solicitar reposición
-        </button>
+        <button type="submit">Solicitar reposición</button>
 
     </form>
 
+    <!-- Mensaje de confirmación -->
+    <div class="mensaje" id="mensajeConfirmacion">
+        ✅ Solicitud enviada correctamente
+    </div>
+
 </div>
+
+<script>
+    const form = document.getElementById("formulario");
+    const mensaje = document.getElementById("mensajeConfirmacion");
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        // Enviar datos
+        fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+        })
+        .then(response => {
+            form.style.display = "none";
+            mensaje.style.display = "block";
+        })
+        .catch(error => {
+            alert("Error al enviar la solicitud");
+        });
+    });
+</script>
 
 </body>
 </html>
