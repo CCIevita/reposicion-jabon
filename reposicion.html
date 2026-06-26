@@ -1,1 +1,106 @@
-action="https://formsubmit.co/comite.infecciones.evitalanus@gmail.com"
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reposición de Jabón</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f5;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .card {
+            background: white;
+            max-width: 420px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            width: 120px;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            margin-bottom: 5px;
+        }
+
+        .subtitulo {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        select {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+        }
+
+        button {
+            background-color: #1e3a5f;
+            color: white;
+            font-size: 18px;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #16304a;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <!-- LOGO -->
+    <img src="logo.png" class="logo">
+
+    <h2>Reposición de Jabón</h2>
+    <p class="subtitulo">H.I.G.A. Evita - Lanús</p>
+
+    <form action="https://formsubmit.co/comite.infecciones.evitalanus@gmail.com" method="POST">
+
+        <label><strong>Seleccione el sector:</strong></label>
+
+        <select name="Sector" required>
+            <option value="">-- Seleccionar --</option>
+            <option>UTI</option>
+            <option>UCO</option>
+            <option>Neonatología</option>
+            <option>UCIP</option>
+            <option>Pediatría</option>
+            <option>Cuidados Intermedios (4to piso)</option>
+            <option>Cuidados Mínimos (3er piso)</option>
+            <option>Salud Mental</option>
+            <option>Guardia adultos</option>
+            <option>Guardia Pediatría</option>
+            <option>Hemodinamia</option>
+            <option>Maternidad</option>
+        </select>
+
+        <input type="hidden" name="_subject" value="Reposición de jabón líquido">
+        <input type="hidden" name="_captcha" value="false">
+
+        <button type="submit">
+            Solicitar reposición
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
